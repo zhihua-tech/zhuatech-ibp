@@ -88,6 +88,10 @@ docker compose config
 
 配套文档：[API](docs/API.md) · [架构](docs/ARCHITECTURE.md) · [测试](docs/TESTING.md) · [安全政策](SECURITY.md) · [贡献指南](CONTRIBUTING.md)
 
+## 共识计划发布门禁
+
+新增跨职能计划发布决策点，统一校验需求确认、供应可行性、关键产能、库存策略、财务对齐、情景比较与管理层签批。系统输出发布、继续共识或阻断结果，详见[企业共识计划发布说明](docs/ENTERPRISE_CONSENSUS_RELEASE.md)。
+
 ## 使用与商业授权
 
 本工程仅允许个人非商业性的学习、研究和技术交流，**不得商用**。商用、SaaS、企业部署、二次销售、软件实施和深度定制须事先取得上海如静知华信息科技有限公司书面授权。
