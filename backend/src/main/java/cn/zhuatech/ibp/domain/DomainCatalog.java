@@ -4,10 +4,16 @@ package cn.zhuatech.ibp.domain;
 import org.springframework.stereotype.Component;
 import java.util.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Component
 public class DomainCatalog {
     private final Map<String, WorkflowAction> actions = new LinkedHashMap<>();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public DomainCatalog() {
         actions.put("SUBMIT", new WorkflowAction("SUBMIT", "提交协同", List.of("草案"), "部门协同", "OPERATOR"));
         actions.put("CONSENSUS", new WorkflowAction("CONSENSUS", "达成共识", List.of("部门协同"), "管理评审", "OPERATOR"));
@@ -16,14 +22,38 @@ public class DomainCatalog {
         actions.put("REPLAN", new WorkflowAction("REPLAN", "滚动重排", List.of("已发布"), "草案", "ADMIN"));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String systemName() { return "知华科技集成业务计划 IBP"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String scene() { return "需求、供应、库存、产能、财务协同，支持 S&OP、场景模拟与执行纠偏"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String initialStatus() { return "草案"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String partyLabel() { return "产品/业务单元"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String amountLabel() { return "计划金额"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String quantityLabel() { return "计划数量"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String dueLabel() { return "计划期间"; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<ModuleDefinition> modules() {
         return List.of(
             new ModuleDefinition("MASTER_DATA", "计划主数据", "治理产品、组织、客户、地点和时间层级"),
@@ -39,8 +69,17 @@ public class DomainCatalog {
         );
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Map<String, WorkflowAction> actions() { return Collections.unmodifiableMap(actions); }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ModuleDefinition(String code, String name, String description) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record WorkflowAction(String code, String label, List<String> from, String to, String requiredRole) {}
 }

@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.ibp.service;
 import jakarta.validation.Valid; import jakarta.validation.constraints.*; import org.springframework.stereotype.Service; import java.math.*; import java.util.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service public class EnterpriseIbpService {
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public BalanceResult balance(@Valid BalanceRequest r){
   BigDecimal available=r.onHand().add(r.supply()); BigDecimal netRequirement=r.demand().add(r.safetyStock()).subtract(available).max(BigDecimal.ZERO);
   BigDecimal constrainedProduction=netRequirement.min(r.capacity()); BigDecimal projected=available.add(constrainedProduction).subtract(r.demand());
@@ -11,7 +17,13 @@ import jakarta.validation.Valid; import jakarta.validation.constraints.*; import
   List<String> exceptions=new ArrayList<>(); if(shortage.signum()>0) exceptions.add("供应能力不足"); if(projected.compareTo(r.safetyStock().multiply(BigDecimal.valueOf(2)))>0) exceptions.add("期末库存偏高");
   return new BalanceResult(r.productNo(),netRequirement,constrainedProduction,projected,shortage,service,revenue,margin,exceptions,exceptions.isEmpty()?"BALANCED":"EXCEPTION");
  }
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public record BalanceRequest(@NotBlank String productNo,@NotNull @DecimalMin("0") BigDecimal demand,@NotNull @DecimalMin("0") BigDecimal supply,@NotNull @DecimalMin("0") BigDecimal onHand,@NotNull @DecimalMin("0") BigDecimal safetyStock,@NotNull @DecimalMin("0") BigDecimal capacity,@NotNull @DecimalMin("0") BigDecimal unitRevenue,@NotNull @DecimalMin("0") BigDecimal unitCost){}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public record BalanceResult(String productNo,BigDecimal netRequirement,BigDecimal plannedProduction,BigDecimal projectedInventory,BigDecimal shortage,BigDecimal serviceLevel,BigDecimal projectedRevenue,BigDecimal projectedMargin,List<String>exceptions,String decision){}
 }
 

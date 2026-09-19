@@ -5,8 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ConsensusPlanReleaseService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         var blockers = new ArrayList<String>();
         var actions = new ArrayList<String>();
@@ -25,11 +31,20 @@ public class ConsensusPlanReleaseService {
         return new Result(decision, List.copyOf(blockers), List.copyOf(actions));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { PUBLISH, CONSENSUS, BLOCKED }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(String planId, boolean demandApproved, boolean supplyFeasible,
                           boolean capacityFeasible, boolean financeReconciled,
                           boolean inventoryPolicyAligned, boolean scenarioCompared,
                           boolean executiveSignoff, boolean periodOpen,
                           boolean decisionMakerSeparated, boolean auditReady) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(Decision decision, List<String> blockers, List<String> actions) {}
 }
