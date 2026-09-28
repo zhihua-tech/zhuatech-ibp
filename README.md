@@ -1,5 +1,7 @@
 # ZhuaTech Ibp｜知华科技集成业务计划 IBP
 
+[简体中文](README.md) | [English](README.en.md)
+
 > 用一套共识计划连接市场、供应链、产能与财务
 
 [![Java 21](https://img.shields.io/badge/Java-21-1f5b87)](backend/pom.xml)
