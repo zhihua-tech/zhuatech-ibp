@@ -1,0 +1,51 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "projectedStock": "#30",
+      "availableToPromise": "#10"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "demand": "140"
+    },
+    "expected": {
+      "decision": "REVIEW",
+      "safetyShortfall": "#10"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "demand": "160"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "projectedStock": "#-10"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "supply": "81"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "overCapacity": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "demand": "130"
+    },
+    "expected": {
+      "decision": "PASS",
+      "availableToPromise": "#0"
+    },
+    "error": false
+  }
+]

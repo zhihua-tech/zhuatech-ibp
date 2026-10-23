@@ -1,0 +1,97 @@
+{
+  "slug": "ibp",
+  "title": "库存平衡与可承诺量缺口",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "opening",
+      "label": "期初库存",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "supply",
+      "label": "计划供给",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "demand",
+      "label": "计划需求",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "reserved",
+      "label": "另行预留量",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "safetyStock",
+      "label": "安全库存",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "capacity",
+      "label": "期间供给上限",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "projectedStock",
+      "label": "预计期末库存"
+    },
+    {
+      "key": "safetyShortfall",
+      "label": "安全库存缺口"
+    },
+    {
+      "key": "overCapacity",
+      "label": "超供给能力"
+    },
+    {
+      "key": "availableToPromise",
+      "label": "扣安全库存可承诺量"
+    }
+  ],
+  "description": "将期初库存、计划供给、需求和已预留量统一口径，计算期末库存及安全库存缺口，并识别供给超过输入产能。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "opening": "100",
+        "supply": "60",
+        "demand": "120",
+        "reserved": "10",
+        "safetyStock": "20",
+        "capacity": "80"
+      }
+    ]
+  }
+}
